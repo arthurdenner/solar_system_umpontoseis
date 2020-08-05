@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:solar_system_umpontoseis/app/modules/shared/utils/theme.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -7,10 +8,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       navigatorKey: Modular.navigatorKey,
       title: 'Solar System',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: defaultTheme,
       initialRoute: '/',
       onGenerateRoute: Modular.generateRoute,
     );
