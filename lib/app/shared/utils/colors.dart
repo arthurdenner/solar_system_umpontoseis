@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   static Color brand = Color(0xFF151515);
   static Color brandWhite = Color(0xFFFFFFFF);
+  static Color brandWhiteOpaque = Color(0xFFFFFFFF).withOpacity(0.65);
   static Gradient gradientButton = LinearGradient(
     colors: [Color(0xFFEF5F53), Color(0xFFFA8F70)],
     begin: Alignment.centerLeft,
