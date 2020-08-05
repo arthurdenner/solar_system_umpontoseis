@@ -3,12 +3,15 @@ import 'package:flutter_svg/svg.dart';
 import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
 import 'package:solar_system_umpontoseis/app/shared/widgets/gradient_mask.dart';
 
+import 'bookmark.dart';
+
 class ResultPlanetCard extends StatelessWidget {
   const ResultPlanetCard({
     Key key,
     @required this.description,
     @required this.label,
     @required this.planet,
+    this.saved = false,
     this.left = 0,
   })  : assert(label != null),
         assert(planet != null),
@@ -18,6 +21,7 @@ class ResultPlanetCard extends StatelessWidget {
   final String label;
   final double left;
   final String planet;
+  final bool saved;
 
   @override
   Widget build(BuildContext context) {
@@ -50,11 +54,7 @@ class ResultPlanetCard extends StatelessWidget {
                             label,
                             style: _textTheme.headline4,
                           ),
-                          SvgPicture.asset(
-                            'assets/icons/save.svg',
-                            color: AppColors.brandWhiteOpaque,
-                            width: 24,
-                          ),
+                          Bookmark(saved: saved),
                         ],
                       ),
                       SizedBox(height: 8),

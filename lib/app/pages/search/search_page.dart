@@ -3,6 +3,7 @@ import 'package:solar_system_umpontoseis/app/shared/utils/data.dart';
 import 'package:solar_system_umpontoseis/app/shared/widgets/search_input.dart';
 
 import 'widgets/header.dart';
+import 'widgets/planet_suggestions.dart';
 import 'widgets/result_planet_card.dart';
 
 class SearchPage extends StatelessWidget {
@@ -43,6 +44,8 @@ class SearchPage extends StatelessWidget {
                     label: 'Netuno',
                     planet: 'neptune',
                   ),
+                  SizedBox(height: 40),
+                  PlanetSuggestions(),
                 ],
               ),
             ),
