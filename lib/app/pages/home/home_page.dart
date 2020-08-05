@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:solar_system_umpontoseis/app/shared/widgets/search_input.dart';
 
-import 'home_controller.dart';
 import 'widgets/categories.dart';
 import 'widgets/header.dart';
 import 'widgets/planets.dart';
@@ -14,7 +12,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends ModularState<HomePage, HomeController> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
