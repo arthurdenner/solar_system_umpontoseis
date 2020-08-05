@@ -56,7 +56,7 @@ class PlanetCard extends StatelessWidget {
             left: -50,
             top: -30,
             child: SvgPicture.asset(
-              'assets/planets/$planet.svg',
+              'assets/planets/$planet.png',
               height: 150,
             ),
           ),
