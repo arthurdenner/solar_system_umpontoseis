@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:solar_system_umpontoseis/app/modules/shared/utils/colors.dart';
 
 import 'widgets/start_button.dart';
 
@@ -30,36 +29,38 @@ class _StartPageState extends State<StartPage> {
             ),
           ),
         ),
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(
-            50,
-            _height * .35,
-            50,
-            _height * .15,
-          ),
-          child: Column(
-            children: <Widget>[
-              Text(
-                'Aperte o cinto',
-                style: _textTheme.bodyText1,
-              ),
-              SizedBox(height: 8),
-              Text(
-                'Comece sua jornada pelo sistema solar.',
-                style: _textTheme.headline4,
-                textAlign: TextAlign.center,
-              ),
-              Expanded(child: Container()),
-              Text(
-                'Pronto para a decolagem?',
-                style: _textTheme.bodyText1,
-              ),
-              SizedBox(height: 16),
-              StartButton(
-                label: 'Começar agora',
-                onTap: _goToHome,
-              ),
-            ],
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(
+              50,
+              _height * .35,
+              50,
+              _height * .15,
+            ),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  'Aperte o cinto',
+                  style: _textTheme.bodyText1,
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Comece sua jornada pelo sistema solar.',
+                  style: _textTheme.headline4,
+                  textAlign: TextAlign.center,
+                ),
+                Expanded(child: Container()),
+                Text(
+                  'Pronto para a decolagem?',
+                  style: _textTheme.bodyText1,
+                ),
+                SizedBox(height: 16),
+                StartButton(
+                  label: 'Começar agora',
+                  onTap: _goToHome,
+                ),
+              ],
+            ),
           ),
         ),
       ),

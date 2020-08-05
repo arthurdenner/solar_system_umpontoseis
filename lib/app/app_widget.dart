@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:solar_system_umpontoseis/app/modules/shared/utils/theme.dart';
+import 'package:solar_system_umpontoseis/app/shared/utils/theme.dart';
 
 class AppWidget extends StatefulWidget {
   @override

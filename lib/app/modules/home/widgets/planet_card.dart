@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:solar_system_umpontoseis/app/modules/shared/utils/colors.dart';
+import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
 
 class PlanetCard extends StatelessWidget {
   const PlanetCard({
