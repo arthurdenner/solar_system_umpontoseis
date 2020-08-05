@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
+import 'package:solar_system_umpontoseis/app/shared/widgets/gradient_mask.dart';
 
 class PlanetCard extends StatelessWidget {
   const PlanetCard({
@@ -39,9 +40,8 @@ class PlanetCard extends StatelessWidget {
                             color: AppColors.brandWhite,
                           ),
                     ),
-                    ShaderMask(
-                      blendMode: BlendMode.srcIn,
-                      shaderCallback: AppColors.gradientButton.createShader,
+                    GradientMask(
+                      gradient: AppColors.gradientButton,
                       child: SvgPicture.asset(
                         'assets/icons/forward.svg',
                         width: 16,
