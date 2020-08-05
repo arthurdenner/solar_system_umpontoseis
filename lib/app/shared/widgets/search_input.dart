@@ -13,8 +13,13 @@ class SearchInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _baseStyle = Theme.of(context).textTheme.bodyText2;
+    final _textStyle = _baseStyle.copyWith(
+      color: AppColors.brandWhiteOpaque,
+    );
+
     return TextField(
-      style: Theme.of(context).textTheme.caption,
+      style: _textStyle,
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.brand,
@@ -22,7 +27,7 @@ class SearchInput extends StatelessWidget {
           minWidth: 0,
           minHeight: 0,
         ),
-        contentPadding: EdgeInsets.fromLTRB(20, 18, 18, 18),
+        contentPadding: EdgeInsets.fromLTRB(20, 17, 18, 17),
         prefixIcon: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: SvgPicture.asset(
@@ -32,7 +37,7 @@ class SearchInput extends StatelessWidget {
           ),
         ),
         hintText: hintText,
-        hintStyle: Theme.of(context).textTheme.caption,
+        hintStyle: _textStyle,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
         ),

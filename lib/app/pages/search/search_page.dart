@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:solar_system_umpontoseis/app/shared/utils/data.dart';
 import 'package:solar_system_umpontoseis/app/shared/widgets/search_input.dart';
 
-import 'widgets/categories.dart';
 import 'widgets/header.dart';
-import 'widgets/planets.dart';
+import 'widgets/result_planet_card.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+class SearchPage extends StatelessWidget {
+  const SearchPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,22 +32,17 @@ class HomePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  HomeHeader(username: 'Arthur Denner'),
+                  SearchHeader(),
                   SizedBox(height: 56),
-                  GestureDetector(
-                    onTap: _goToSearch,
-                    behavior: HitTestBehavior.opaque,
-                    child: IgnorePointer(
-                      ignoring: true,
-                      child: SearchInput(
-                        hintText: 'Procure planetas, asteroides, estrelas...',
-                      ),
-                    ),
+                  SearchInput(
+                    hintText: 'Netuno',
                   ),
-                  SizedBox(height: 48),
-                  Categories(),
-                  SizedBox(height: 48),
-                  Planets(),
+                  SizedBox(height: 40),
+                  ResultPlanetCard(
+                    description: AppPlanets.neptune.description,
+                    label: 'Netuno',
+                    planet: 'neptune',
+                  ),
                 ],
               ),
             ),
@@ -56,9 +50,5 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void _goToSearch() {
-    Modular.to.pushNamed('/search');
   }
 }

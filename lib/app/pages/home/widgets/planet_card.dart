@@ -39,9 +39,7 @@ class PlanetCard extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       label,
-                      style: Theme.of(context).textTheme.button.copyWith(
-                            color: AppColors.brandWhite,
-                          ),
+                      style: Theme.of(context).textTheme.button,
                     ),
                     GradientMask(
                       gradient: AppColors.gradientButton,

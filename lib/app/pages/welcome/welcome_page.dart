@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
 
 import 'widgets/start_button.dart';
 
@@ -35,7 +36,9 @@ class WelcomePage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Aperte o cinto',
-                  style: _textTheme.bodyText1,
+                  style: _textTheme.bodyText1.copyWith(
+                    color: AppColors.brandWhiteOpaque,
+                  ),
                 ),
                 SizedBox(height: 8),
                 Text(
