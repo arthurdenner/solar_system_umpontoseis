@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:solar_system_umpontoseis/app/modules/shared/utils/colors.dart';
+import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
+import 'package:solar_system_umpontoseis/app/shared/widgets/gradient_mask.dart';
 
 class PlanetCard extends StatelessWidget {
   const PlanetCard({
     Key key,
     @required this.label,
     @required this.planet,
+    this.left = 0,
   })  : assert(label != null),
         assert(planet != null),
         super(key: key);
 
   final String label;
+  final double left;
   final String planet;
 
   @override
@@ -22,6 +25,7 @@ class PlanetCard extends StatelessWidget {
         children: <Widget>[
           Container(
             height: 190,
+            width: 140,
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
@@ -39,9 +43,8 @@ class PlanetCard extends StatelessWidget {
                             color: AppColors.brandWhite,
                           ),
                     ),
-                    ShaderMask(
-                      blendMode: BlendMode.srcIn,
-                      shaderCallback: AppColors.gradientButton.createShader,
+                    GradientMask(
+                      gradient: AppColors.gradientButton,
                       child: SvgPicture.asset(
                         'assets/icons/forward.svg',
                         width: 16,
@@ -53,10 +56,11 @@ class PlanetCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: -50,
+            left: left - 50,
             top: -30,
-            child: SvgPicture.asset(
+            child: Image.asset(
               'assets/planets/$planet.png',
+              fit: BoxFit.fill,
               height: 150,
             ),
           ),
