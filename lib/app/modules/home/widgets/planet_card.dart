@@ -8,11 +8,13 @@ class PlanetCard extends StatelessWidget {
     Key key,
     @required this.label,
     @required this.planet,
+    this.left = 0,
   })  : assert(label != null),
         assert(planet != null),
         super(key: key);
 
   final String label;
+  final double left;
   final String planet;
 
   @override
@@ -23,6 +25,7 @@ class PlanetCard extends StatelessWidget {
         children: <Widget>[
           Container(
             height: 190,
+            width: 140,
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
@@ -53,10 +56,11 @@ class PlanetCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: -50,
+            left: left - 50,
             top: -30,
-            child: SvgPicture.asset(
+            child: Image.asset(
               'assets/planets/$planet.png',
+              fit: BoxFit.fill,
               height: 150,
             ),
           ),

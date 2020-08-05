@@ -5,6 +5,7 @@ import 'package:solar_system_umpontoseis/app/shared/widgets/search_input.dart';
 import 'home_controller.dart';
 import 'widgets/categories.dart';
 import 'widgets/header.dart';
+import 'widgets/planets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -45,6 +46,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                   ),
                   SizedBox(height: 48),
                   Categories(),
+                  SizedBox(height: 48),
+                  Planets(),
                 ],
               ),
             ),
