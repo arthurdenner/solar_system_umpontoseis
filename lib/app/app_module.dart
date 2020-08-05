@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:solar_system_umpontoseis/app/app_widget.dart';
 import 'package:solar_system_umpontoseis/app/pages/home/home_page.dart';
-import 'package:solar_system_umpontoseis/app/pages/start/start_page.dart';
+import 'package:solar_system_umpontoseis/app/pages/welcome/welcome_page.dart';
 
 class AppModule extends MainModule {
   @override
@@ -13,7 +13,7 @@ class AppModule extends MainModule {
 
   @override
   List<Router> get routers => [
-        Router('/start', child: (_, args) => StartPage()),
+        Router('/welcome', child: (_, args) => WelcomePage()),
         Router('/home', child: (_, args) => HomePage()),
       ];
 

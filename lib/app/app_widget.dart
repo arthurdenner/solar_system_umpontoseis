@@ -26,7 +26,7 @@ class _AppWidgetState extends State<AppWidget> {
       navigatorKey: Modular.navigatorKey,
       title: 'Solar System',
       theme: defaultTheme,
-      initialRoute: '/start',
+      initialRoute: '/welcome',
       onGenerateRoute: Modular.generateRoute,
     );
   }

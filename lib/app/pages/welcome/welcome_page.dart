@@ -3,15 +3,9 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import 'widgets/start_button.dart';
 
-class StartPage extends StatefulWidget {
-  final String title;
-  const StartPage({Key key, this.title = "Start"}) : super(key: key);
+class WelcomePage extends StatelessWidget {
+  const WelcomePage({Key key}) : super(key: key);
 
-  @override
-  _StartPageState createState() => _StartPageState();
-}
-
-class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     final _textTheme = Theme.of(context).textTheme;
