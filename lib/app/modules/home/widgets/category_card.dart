@@ -19,26 +19,29 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        gradient: gradient,
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          SvgPicture.asset(
-            'assets/icons/$icon.svg',
-            color: AppColors.brandWhite,
-            width: 32,
-          ),
-          SizedBox(height: 8),
-          Text(
-            label,
-            style: Theme.of(context).textTheme.bodyText2,
-          ),
-        ],
+    return Expanded(
+      child: Container(
+        padding: EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          gradient: gradient,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            SvgPicture.asset(
+              'assets/icons/$icon.svg',
+              color: AppColors.brandWhite,
+              width: 32,
+            ),
+            SizedBox(height: 8),
+            Text(
+              label,
+              style: Theme.of(context).textTheme.bodyText2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
       ),
     );
   }
