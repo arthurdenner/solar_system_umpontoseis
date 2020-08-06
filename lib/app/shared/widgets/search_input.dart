@@ -29,7 +29,7 @@ class SearchInput extends StatelessWidget {
         ),
         contentPadding: EdgeInsets.fromLTRB(20, 17, 18, 17),
         prefixIcon: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.fromLTRB(20, 0, 16, 0),
           child: SvgPicture.asset(
             'assets/icons/search.svg',
             color: AppColors.brandWhite,
