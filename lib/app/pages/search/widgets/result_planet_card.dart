@@ -69,6 +69,7 @@ class ResultPlanetCard extends StatelessWidget {
                       SizedBox(height: 20),
                       GestureDetector(
                         onTap: () => selectPlanet(details),
+                        behavior: HitTestBehavior.opaque,
                         child: Row(
                           children: <Widget>[
                             Text(
