@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:solar_system_umpontoseis/app/shared/models/planet_details.dart';
 import 'package:solar_system_umpontoseis/app/shared/utils/data.dart';
 
 import 'result_planet_card.dart';

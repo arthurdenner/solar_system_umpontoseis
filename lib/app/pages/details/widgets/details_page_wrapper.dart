@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:palette_generator/palette_generator.dart';
+import 'package:solar_system_umpontoseis/app/shared/models/planet_details.dart';
 import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
-import 'package:solar_system_umpontoseis/app/shared/utils/data.dart';
 
 class DetailsPageWrapper extends StatefulWidget {
   const DetailsPageWrapper({

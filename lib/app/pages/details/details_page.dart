@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:solar_system_umpontoseis/app/shared/models/planet_details.dart';
 import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
-import 'package:solar_system_umpontoseis/app/shared/utils/data.dart';
 import 'package:solar_system_umpontoseis/app/shared/widgets/bookmark_icon.dart';
 
 import 'widgets/details_header.dart';
