@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:solar_system_umpontoseis/app/shared/widgets/search_input.dart';
 
 import 'widgets/categories.dart';
-import 'widgets/header.dart';
+import 'widgets/home_header.dart';
 import 'widgets/planets.dart';
 
 class HomePage extends StatelessWidget {
