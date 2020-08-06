@@ -1,13 +1,24 @@
 import 'package:flutter/foundation.dart';
 
-class PlanetInformation {
+class PlanetDetails {
   final String description;
+  final String image;
+  final String name;
+  final bool saved;
 
-  PlanetInformation({@required this.description});
+  PlanetDetails({
+    @required this.description,
+    @required this.image,
+    @required this.name,
+    @required this.saved,
+  });
 }
 
 class AppPlanets {
-  static PlanetInformation mars = PlanetInformation(
+  static PlanetDetails mars = PlanetDetails(
+    saved: true,
+    image: 'assets/planets/mars.png',
+    name: 'Marte',
     description: 'Marte é o quarto planeta a partir do Sol, '
         'o segundo menor do Sistema Solar. '
         'Batizado em homenagem ao deus romano da guerra, '
@@ -15,7 +26,10 @@ class AppPlanets {
         'porque o óxido de ferro predominante em sua superfície '
         'lhe dá uma aparência avermelhada.',
   );
-  static PlanetInformation neptune = PlanetInformation(
+  static PlanetDetails neptune = PlanetDetails(
+    saved: false,
+    image: 'assets/planets/neptune.png',
+    name: 'Netuno',
     description: 'Netuno é o oitavo planeta do Sistema Solar, '
         'o último a partir do Sol desde a reclassificação de Plutão '
         'para a categoria de planeta anão, em 2006. '

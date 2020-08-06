@@ -12,18 +12,21 @@ class SearchHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            SvgPicture.asset(
-              'assets/icons/back.svg',
-              color: AppColors.brandWhite,
-            ),
-            SvgPicture.asset(
-              'assets/icons/settings.svg',
-              color: AppColors.brandWhite,
-            ),
-          ],
+        Hero(
+          tag: 'header',
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              SvgPicture.asset(
+                'assets/icons/back.svg',
+                color: AppColors.brandWhite,
+              ),
+              SvgPicture.asset(
+                'assets/icons/settings.svg',
+                color: AppColors.brandWhite,
+              ),
+            ],
+          ),
         ),
         SizedBox(height: 32),
         Text(

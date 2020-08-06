@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
+import 'package:solar_system_umpontoseis/app/shared/utils/data.dart';
+import 'package:solar_system_umpontoseis/app/shared/widgets/bookmark_icon.dart';
 import 'package:solar_system_umpontoseis/app/shared/widgets/gradient_mask.dart';
-
-import 'bookmark.dart';
 
 class ResultPlanetCard extends StatelessWidget {
   const ResultPlanetCard({
     Key key,
-    @required this.description,
+    @required this.details,
     @required this.label,
     @required this.planet,
-    this.saved = false,
+    @required this.selectPlanet,
     this.left = 0,
   })  : assert(label != null),
         assert(planet != null),
         super(key: key);
 
-  final String description;
+  final ValueChanged<PlanetDetails> selectPlanet;
+  final PlanetDetails details;
   final String label;
   final double left;
   final String planet;
-  final bool saved;
 
   @override
   Widget build(BuildContext context) {
@@ -54,12 +54,12 @@ class ResultPlanetCard extends StatelessWidget {
                             label,
                             style: _textTheme.headline4,
                           ),
-                          Bookmark(saved: saved),
+                          BookmarkIcon(saved: details.saved),
                         ],
                       ),
                       SizedBox(height: 8),
                       Text(
-                        description,
+                        details.description,
                         maxLines: 4,
                         overflow: TextOverflow.ellipsis,
                         style: _textTheme.bodyText2.copyWith(
@@ -67,21 +67,24 @@ class ResultPlanetCard extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 20),
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            'Continue lendo',
-                            style: _textTheme.bodyText2,
-                          ),
-                          SizedBox(width: 8),
-                          GradientMask(
-                            gradient: AppColors.gradientButton,
-                            child: SvgPicture.asset(
-                              'assets/icons/forward.svg',
-                              width: 16,
+                      GestureDetector(
+                        onTap: () => selectPlanet(details),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              'Continue lendo',
+                              style: _textTheme.bodyText2,
                             ),
-                          ),
-                        ],
+                            SizedBox(width: 8),
+                            GradientMask(
+                              gradient: AppColors.gradientButton,
+                              child: SvgPicture.asset(
+                                'assets/icons/forward.svg',
+                                width: 16,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -90,12 +93,15 @@ class ResultPlanetCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: left - 30,
+            left: left - 40,
             top: -30,
-            child: Image.asset(
-              'assets/planets/$planet.png',
-              fit: BoxFit.fill,
-              height: 200,
+            child: Hero(
+              tag: details.name,
+              child: Image.asset(
+                details.image,
+                fit: BoxFit.fill,
+                height: 200,
+              ),
             ),
           ),
         ],

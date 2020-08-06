@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:solar_system_umpontoseis/app/shared/utils/data.dart';
 import 'package:solar_system_umpontoseis/app/shared/widgets/search_input.dart';
 
@@ -40,12 +41,15 @@ class SearchPage extends StatelessWidget {
                   ),
                   SizedBox(height: 40),
                   ResultPlanetCard(
-                    description: AppPlanets.neptune.description,
+                    selectPlanet: _selectPlanet,
+                    details: AppPlanets.neptune,
                     label: 'Netuno',
                     planet: 'neptune',
                   ),
                   SizedBox(height: 40),
-                  PlanetSuggestions(),
+                  PlanetSuggestions(
+                    selectPlanet: _selectPlanet,
+                  ),
                 ],
               ),
             ),
@@ -53,5 +57,9 @@ class SearchPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _selectPlanet(PlanetDetails details) {
+    Modular.to.pushNamed('/details', arguments: {"details": details});
   }
 }

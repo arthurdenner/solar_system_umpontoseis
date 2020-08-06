@@ -4,7 +4,13 @@ import 'package:solar_system_umpontoseis/app/shared/utils/data.dart';
 import 'result_planet_card.dart';
 
 class PlanetSuggestions extends StatelessWidget {
-  const PlanetSuggestions({Key key}) : super(key: key);
+  const PlanetSuggestions({
+    Key key,
+    @required this.selectPlanet,
+  })  : assert(selectPlanet != null),
+        super(key: key);
+
+  final ValueChanged<PlanetDetails> selectPlanet;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +23,8 @@ class PlanetSuggestions extends StatelessWidget {
         ),
         SizedBox(height: 24),
         ResultPlanetCard(
-          saved: true,
-          description: AppPlanets.mars.description,
+          selectPlanet: selectPlanet,
+          details: AppPlanets.mars,
           label: 'Marte',
           planet: 'mars',
         ),
