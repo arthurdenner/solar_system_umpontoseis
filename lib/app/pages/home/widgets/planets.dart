@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:solar_system_umpontoseis/app/shared/utils/data.dart';
 
 import 'planet_card.dart';
 
@@ -22,54 +23,44 @@ class Planets extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             children: <Widget>[
               PlanetCard(
-                label: 'Sol',
-                planet: 'sun',
+                details: AppPlanets.sun,
               ),
               SizedBox(width: 18),
               PlanetCard(
-                label: 'Mercúrio',
-                planet: 'mercury',
+                details: AppPlanets.mercury,
               ),
               SizedBox(width: 18),
               PlanetCard(
-                label: 'Vênus',
-                planet: 'venus',
+                details: AppPlanets.venus,
               ),
               SizedBox(width: 18),
               PlanetCard(
-                label: 'Terra',
-                planet: 'earth',
+                details: AppPlanets.earth,
               ),
               SizedBox(width: 18),
               PlanetCard(
-                label: 'Marte',
-                planet: 'mars',
+                details: AppPlanets.mars,
               ),
               SizedBox(width: 18),
               PlanetCard(
-                label: 'Júpiter',
-                planet: 'jupiter',
+                details: AppPlanets.jupiter,
               ),
               SizedBox(width: 18),
               PlanetCard(
                 left: -56.25,
-                label: 'Saturno',
-                planet: 'saturn',
+                details: AppPlanets.saturn,
               ),
               SizedBox(width: 18),
               PlanetCard(
-                label: 'Urano',
-                planet: 'uranus',
+                details: AppPlanets.uranus,
               ),
               SizedBox(width: 18),
               PlanetCard(
-                label: 'Netuno',
-                planet: 'neptune',
+                details: AppPlanets.neptune,
               ),
               SizedBox(width: 18),
               PlanetCard(
-                label: 'Plutão',
-                planet: 'pluto',
+                details: AppPlanets.pluto,
               ),
             ],
           ),
