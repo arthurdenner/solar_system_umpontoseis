@@ -1,3 +1,4 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
@@ -5,15 +6,12 @@ import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
 class AccordionItem extends StatefulWidget {
   AccordionItem({
     Key key,
-    @required this.content,
     @required this.title,
     this.noBorder: false,
-  })  : assert(content != null && content.length > 0),
-        assert(title != null && title.length > 0),
+  })  : assert(title != null && title.length > 0),
         super(key: key);
 
   final bool noBorder;
-  final String content;
   final String title;
 
   @override
@@ -67,7 +65,7 @@ class _AccordionItemState extends State<AccordionItem>
           if (_expanded) ...[
             SizedBox(height: 20),
             Text(
-              widget.content,
+              faker.lorem.sentences(2).join(' '),
               style: Theme.of(context).textTheme.bodyText1.copyWith(
                     color: AppColors.brand.withOpacity(.75),
                   ),
