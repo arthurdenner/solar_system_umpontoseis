@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
 
@@ -17,9 +18,12 @@ class SearchHeader extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              SvgPicture.asset(
-                'assets/icons/back.svg',
-                color: AppColors.brandWhite,
+              GestureDetector(
+                onTap: Modular.to.pop,
+                child: SvgPicture.asset(
+                  'assets/icons/back.svg',
+                  color: AppColors.brandWhite,
+                ),
               ),
               SvgPicture.asset(
                 'assets/icons/settings.svg',
