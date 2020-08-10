@@ -34,19 +34,14 @@ class _DetailsPageWrapperState extends State<DetailsPageWrapper> {
     final _height = MediaQuery.of(context).size.height;
 
     return Container(
+      color: AppColors.brandWhite,
       height: _height,
-      child: Column(
-        children: <Widget>[
-          Expanded(
-            child: Stack(
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Stack(
               children: <Widget>[
-                Positioned.fill(
-                  child: Container(
-                    color: AppColors.brandWhite,
-                  ),
-                ),
                 Positioned(
-                  top: 0,
                   left: 0,
                   right: 0,
                   height: _height * .3 + kToolbarHeight,
@@ -98,8 +93,8 @@ class _DetailsPageWrapperState extends State<DetailsPageWrapper> {
                 SafeArea(child: widget.child),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
