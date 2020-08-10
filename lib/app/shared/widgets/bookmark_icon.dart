@@ -3,13 +3,15 @@ import 'package:flutter_svg/svg.dart';
 import 'package:solar_system_umpontoseis/app/shared/utils/colors.dart';
 import 'package:solar_system_umpontoseis/app/shared/widgets/gradient_mask.dart';
 
-class Bookmark extends StatelessWidget {
-  const Bookmark({
+class BookmarkIcon extends StatelessWidget {
+  const BookmarkIcon({
     Key key,
     @required this.saved,
+    this.color,
   })  : assert(saved != null),
         super(key: key);
 
+  final Color color;
   final bool saved;
 
   @override
@@ -26,7 +28,7 @@ class Bookmark extends StatelessWidget {
 
     return SvgPicture.asset(
       'assets/icons/save.svg',
-      color: AppColors.brandWhiteOpaque,
+      color: color ?? AppColors.brandWhiteOpaque,
       width: 24,
     );
   }
